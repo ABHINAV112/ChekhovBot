@@ -1,11 +1,5 @@
 import discord
 import requests
-
-
-
-
-
-
 client = discord.Client()
 
 @client.event
@@ -27,7 +21,16 @@ async def on_message(message):
         response = requests.request("GET", url, headers=headers, data = payload)
         # output = response.json()["insult"]
         output = response.text
-        print(output)
         await message.channel.send(output)
+    if message.content.startswith("$current_ip"):
+        url="https://chekhov-d2823.firebaseapp.com/api/wan"
+        payload = {}
+        headers= {}
+        response = requests.request("GET", url, headers=headers, data = payload).json()
+        output = ""
+        for key in response:
+            output+=key+" : "+response[key]+'\n'
+        await message.channel.send(output)
+
 
 client.run('Njg2ODM4Nzc2NDU0MTg0OTgx.XmdDrA.EcXGF2vY6-vBzHKr70nbpfuadF4')
