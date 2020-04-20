@@ -2,6 +2,34 @@
 
 Dockerized discord bot which runs on our custom made server. The discord bot has the following commands and is run on a specific discord channel.
 
+## Installation
+
+In order to run this
+
+### python
+
+If you have python installed, then run the following commands
+
+```bash
+pip install discord
+pip install requests
+```
+
+And run the following command
+
+```bash
+python bot.py
+```
+
+### Docker
+
+If you have docker installed, then run the following commands
+
+```bash
+docker pull abhinav112/discord-bot
+docker run -d abhinav112/discord-bot
+```
+
 ## Commands
 
 ### \$hello
