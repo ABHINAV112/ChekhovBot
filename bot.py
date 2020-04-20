@@ -2,7 +2,7 @@ import discord
 import requests
 from discord.ext import commands, tasks
 from Run_Code import execute_command
-
+from config import BOT_TOKEN
 client = discord.Client()
 
 
@@ -75,4 +75,4 @@ async def on_message(message):
             await message.channel.send("You cannot use the $run command from this channel")
 
 
-client.run('Njg2ODM4Nzc2NDU0MTg0OTgx.XmdDrA.EcXGF2vY6-vBzHKr70nbpfuadF4')
+client.run(BOT_TOKEN)
